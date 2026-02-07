@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(203, 102, 229);
+}
+.loginContainer {
+  
+  width:500px;
+  display: flex;
+  justify-content: center;
+}
+.title {
+   font-size: 50px;
+ 
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column; /* This creates the vertical column */
+  width: 300px;           /* Set a fixed width for the form */
+  gap: 15px;              /* Adds space between each element */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}

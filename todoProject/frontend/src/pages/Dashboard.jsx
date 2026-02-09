@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import styles from '../styles/Dashboard.css';
 const Dashboard = () => {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
@@ -26,16 +26,24 @@ const Dashboard = () => {
 
   return (
     <>
-      <h2>My Todos</h2>
-      <input placeholder="New Todo"
+    <div className="dashContainer">
+      <h2 className="title3">My Todos</h2>
+      <form className="dashForm">
+      <input className="input1" placeholder="New Todo"
              onChange={e => setTitle(e.target.value)} />
-      <button onClick={addTodo}>Add</button>
-
+      <button className="input1" onClick={addTodo}>Add</button>
+      </form>
+    </div>
+    <div className="dashResult">
       {todos.map(t => (
-        <div key={t._id}>{t.title}</div>
+        <div class="result" key={t._id}>{t.title}</div>
       ))}
+    </div>
     </>
   );
 };
 
 export default Dashboard;
+
+
+

@@ -27,4 +27,11 @@ router.delete("/:id", auth, async (req, res) => {
   res.json({ msg: "Deleted" });
 });
 
+
+
+
+
+
+
+
 module.exports = router;

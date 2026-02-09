@@ -12,7 +12,7 @@
 //         <Routes>
 //           <Route path="/login" element={<Login />} />
 //           <Route path="/register" element={<Register />} />
-//           <Route path="/" element={
+//           <Route path="/login" element={
 //             <ProtectedRoute>
 //               <Dashboard />
 //             </ProtectedRoute>
@@ -42,20 +42,18 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          
           <Route path="/register" element={<Register />} />
-          {/* <Route
-            path="/"
-            element={
-              <ProtectedRoute>
+          
+          <Route 
+             path="/Dashboard" 
+             element={
+             <ProtectedRoute>
                 <Dashboard />
               </ProtectedRoute>
             }
-          /> */}
-          <Route path="/Dashboard" element={
-  <ProtectedRoute>
-    <Dashboard />
-  </ProtectedRoute>
-} />
+         />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

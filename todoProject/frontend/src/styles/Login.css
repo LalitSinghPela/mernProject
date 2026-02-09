@@ -1,23 +1,27 @@
 body{
-    background-color: rgb(203, 102, 229);
-}
-.loginContainer {
-  
-  width:500px;
-  display: flex;
-  justify-content: center;
-}
-.title {
-   font-size: 50px;
- 
+    background-color: rgb(161, 226, 246);
 }
 
+.loginContainer {
+    margin-left: 50vh;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    height: 60vh;
+    background-color: #e0f5e0;
+    width: 50%;
+    justify-content: center;
+}
 .loginForm {
-  display: flex;
-  flex-direction: column; /* This creates the vertical column */
-  width: 300px;           /* Set a fixed width for the form */
-  gap: 15px;              /* Adds space between each element */
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+    margin-top:8vh;
+    display: flex;
+    width: 40vh;
+    flex-direction: column;
+}
+.title {
+    display: flex;
+    justify-content: center;
+}
+.input1 {
+    margin: 10px;
 }

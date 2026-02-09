@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useContext, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import styles from '../styles/Login.css';
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login } = useContext(AuthContext);
+  // const navigate=useNavigate();
 
   // const submit = async () => {
   //   const res = await axios.post("http://localhost:5000/api/auth/login", {
@@ -22,26 +25,30 @@ const Login = () => {
         password
       }
     );
+    // console.log("LOGIN response",res.data);
+    
+        login(res.data.token);
+        // navigate("/dashboard" );
+    
 
-    login(res.data.token);
 
   } catch (error) {
     alert("Login failed. Check email or password.");
-    console.log(error);
+    console.log("error",error);
   }
 };
 
   return (
     <>
-    <div class={styles.loginContainer}>
+    <div className="loginContainer">
       
      
-      <form  class={styles.loginForm} >
-      <h2 class={styles.title}>Login</h2>
-      <input placeholder="Email" onChange={e => setEmail(e.target.value)} />
-      <input type="password" placeholder="Password"
+      <form  className="loginForm" >
+      <h2 className="title">Login</h2>
+      <input className="input1" placeholder="Email" onChange={e => setEmail(e.target.value)} />
+      <input className ="input1" type="password" placeholder="Password"
              onChange={e => setPassword(e.target.value)} />
-      <button onClick={submit}>Login</button>
+      <button className="input1" onClick={submit}>Login</button>
       </form>
     </div>
     </>

@@ -20,6 +20,11 @@
     margin-left:250px;
 }
 
+.totalresult {
+    display: flex;
+    background-color: #e0f5e0;
+    margin-top: 20px;
+}
 .result {
     
 display: flex;
@@ -28,10 +33,18 @@ display: flex;
     width: 50vh;
     margin-left: 49vh;
 }
-.dashResult {
+ .dashResult {
     
     background-color: #e0f5e0;
     margin-top: 20px;
     width: 150vh;
     margin-left: 22vh;
+}
+.todo-list {
+    margin-left: 80vh;
+}
+
+li {
+    border: 2px solid black;
+    padding: 2px;
 }

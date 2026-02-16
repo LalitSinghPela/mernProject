@@ -25,7 +25,7 @@ const Login = () => {
         password
       }
     );
-    // console.log("LOGIN response",res.data);
+    console.log("LOGIN response",res.data);
     
         login(res.data.token);
         // navigate("/dashboard" );

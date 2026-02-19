@@ -1,4 +1,3 @@
-
 .dashContainer {
     margin-top: 20px;
     display: flex;
@@ -25,21 +24,22 @@
     background-color: #e0f5e0;
     margin-top: 20px;
 }
+
 .result {
-    
-display: flex;
+    display: flex;
     justify-content: center;
     border: 2px solid #637877;
     width: 50vh;
     margin-left: 49vh;
 }
- .dashResult {
-    
+
+.dashResult {
     background-color: #e0f5e0;
     margin-top: 20px;
     width: 150vh;
     margin-left: 22vh;
 }
+
 .todo-list {
     margin-left: 80vh;
 }

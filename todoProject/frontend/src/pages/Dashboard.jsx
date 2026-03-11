@@ -82,25 +82,20 @@ const addTodo = async () => {
   return (
   <>
     <div className="dashContainer">
-
       <h2 className="title3">My Todos</h2>
-
-      <form
-        className="dashForm"
-        onSubmit={(e) => {
+      <form className="dashForm" onSubmit={(e) => { 
           e.preventDefault();
           addTodo();
-        }}
-      >
+        }}>
 
-        <input
+      <input
           className="input1"
           placeholder="New Todo"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        <button className="input1" type="submit">
+      <button className="input1" type="submit">
           Add
         </button>
 

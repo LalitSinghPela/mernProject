@@ -11,7 +11,7 @@ export default function OrderList(){
     useEffect(()=>{
         // Fetch orders
         axios.get(
-          "http://localhost:5000/api/orders",
+          "https://ecommerce-ur3e.onrender.com//api/orders",
           {
             headers:{
               authorization:localStorage.getItem("token")
@@ -23,7 +23,7 @@ export default function OrderList(){
     const handleUpdateOrderStatus = async (orderId, status) => {
         try {
             await axios.put(
-                `http://localhost:5000/api/orders/${orderId}/status`,
+                `https://ecommerce-ur3e.onrender.com/api/orders/${orderId}/status`,
                 { status },
                 {
                     headers: {
@@ -34,7 +34,7 @@ export default function OrderList(){
             setMessage(`Order status updated to ${status}!`);
             // Refresh orders
             const res = await axios.get(
-                "http://localhost:5000/api/orders",
+                "https://ecommerce-ur3e.onrender.com//api/orders",
                 {
                     headers: {
                         authorization: localStorage.getItem("token")
@@ -54,7 +54,7 @@ export default function OrderList(){
         
         try {
             await axios.delete(
-                `http://localhost:5000/api/orders/${orderId}`,
+                `https://ecommerce-ur3e.onrender.com/api/orders/${orderId}`,
                 {
                     headers: {
                         authorization: localStorage.getItem("token")
@@ -64,7 +64,7 @@ export default function OrderList(){
             setMessage("Order deleted successfully!");
             // Refresh orders
             const res = await axios.get(
-                "http://localhost:5000/api/orders",
+                "https://ecommerce-ur3e.onrender.com/api/orders",
                 {
                     headers: {
                         authorization: localStorage.getItem("token")

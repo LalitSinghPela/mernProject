@@ -18,7 +18,7 @@ export default function ProductDetail(){
         }
 
         axios.get(
-          `http://localhost:5000/api/products/${id}`
+          `https://ecommerce-ur3e.onrender.com//api/products/${id}`
         ).then(res=>{
             setProduct(res.data);
                         // choose a main image

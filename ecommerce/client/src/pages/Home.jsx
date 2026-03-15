@@ -11,7 +11,7 @@ export default function Home(){
 
     useEffect(()=>{
         // Fetch featured products
-        axios.get("http://localhost:5000/api/products/featured/list")
+        axios.get("https://ecommerce-ur3e.onrender.com/api/products/featured/list")
         .then(res=>{
             setFeaturedProducts(res.data.slice(0, 4));
         })
@@ -20,7 +20,7 @@ export default function Home(){
         });
 
         // Fetch all products
-        axios.get("http://localhost:5000/api/products")
+        axios.get("https://ecommerce-ur3e.onrender.com/api/products")
         .then(res=>{
             setProducts(res.data);
             setLoading(false);

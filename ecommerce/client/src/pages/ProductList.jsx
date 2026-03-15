@@ -28,7 +28,7 @@ export default function ProductList(){
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/products");
+            const response = await axios.get("https://ecommerce-ur3e.onrender.com/api/products");
             setProducts(response.data);
         } catch (error) {
             console.error("Error fetching products:", error);
@@ -94,7 +94,7 @@ export default function ProductList(){
         
         try {
             await axios.delete(
-                `http://localhost:5000/api/products/${productId}`,
+                `https://ecommerce-ur3e.onrender.com/api/products/${productId}`,
                 {
                     headers: {
                         authorization: localStorage.getItem("token")
@@ -116,7 +116,7 @@ export default function ProductList(){
             };
             
             await axios.put(
-                `http://localhost:5000/api/products/${product._id}`,
+                `https://ecommerce-ur3e.onrender.com/api/products/${product._id}`,
                 updatedData,
                 {
                     headers: {
@@ -154,7 +154,7 @@ export default function ProductList(){
             if (editingProduct) {
                 // Update product
                 const response = await axios.put(
-                    `http://localhost:5000/api/products/${editingProduct}`,
+                    `https://ecommerce-ur3e.onrender.com/api/products/${editingProduct}`,
                     productData,
                     {
                         headers: {
@@ -180,7 +180,7 @@ export default function ProductList(){
             } else {
                 // Add new product
                 const response = await axios.post(
-                    "http://localhost:5000/api/products",
+                    "https://ecommerce-ur3e.onrender.com/api/products",
                     productData,
                     {
                         headers: {

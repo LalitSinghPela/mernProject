@@ -15,7 +15,7 @@ export default function Admin(){
     useEffect(()=>{
         // Fetch product stats
         axios.get(
-          "http://localhost:5000/api/products/stats",
+          "https://ecommerce-ur3e.onrender.com/api/products/stats",
           {
             headers:{
               authorization:localStorage.getItem("token")
@@ -27,7 +27,7 @@ export default function Admin(){
         
         // Fetch order stats
         axios.get(
-          "http://localhost:5000/api/orders/stats",
+          "https://ecommerce-ur3e.onrender.com/api/orders/stats",
           {
             headers:{
               authorization:localStorage.getItem("token")

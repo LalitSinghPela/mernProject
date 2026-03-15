@@ -17,7 +17,7 @@ export default function Product(){
     const SELLER_WHATSAPP = "918218236799"; // Replace with your WhatsApp number (country code + number)
 
     useEffect(()=>{
-        let url = "http://localhost:5000/api/products";
+        let url = "https://ecommerce-ur3e.onrender.com/api/products";
         if (selectedCategory) {
             url += `?category=${selectedCategory}`;
         }
@@ -46,7 +46,7 @@ export default function Product(){
 
         try {
             // Create order in database
-            await axios.post("http://localhost:5000/api/orders", {
+            await axios.post("https://ecommerce-ur3e.onrender.com/api/orders", {
                 products: [selectedProduct],
                 totalPrice: selectedProduct.price,
                 customerName: customerName,

@@ -4,9 +4,9 @@ import {useNavigate} from "react-router-dom";
 
 export default function OrderList(){
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [orders,setOrders]=useState([]);
-    const [message, setMessage] = useState("");
+    // const [message, setMessage] = useState("");
 
     useEffect(()=>{
         // Fetch orders

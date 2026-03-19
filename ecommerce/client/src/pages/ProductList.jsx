@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 
 export default function ProductList(){
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [products,setProducts]=useState([]);
     const [showProductForm, setShowProductForm] = useState(false);
     const [loading, setLoading] = useState(false);

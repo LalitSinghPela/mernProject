@@ -1,12 +1,10 @@
 import axios from "axios";
 import {useEffect,useState} from "react";
-import {useNavigate} from "react-router-dom";
 
 export default function OrderList(){
 
     // const navigate = useNavigate();
     const [orders,setOrders]=useState([]);
-    // const [message, setMessage] = useState("");
 
     useEffect(()=>{
         // Fetch orders
@@ -31,7 +29,6 @@ export default function OrderList(){
                     }
                 }
             );
-            setMessage(`Order status updated to ${status}!`);
             // Refresh orders
             const res = await axios.get(
                 "https://ecommerce-ur3e.onrender.com//api/orders",
@@ -43,7 +40,7 @@ export default function OrderList(){
             );
             setOrders(res.data);
         } catch (error) {
-            setMessage("Error updating order status: " + (error.response?.data?.message || error.message));
+            console.error("Error updating order status:", error);
         }
     };
 
@@ -61,7 +58,6 @@ export default function OrderList(){
                     }
                 }
             );
-            setMessage("Order deleted successfully!");
             // Refresh orders
             const res = await axios.get(
                 "https://ecommerce-ur3e.onrender.com/api/orders",
@@ -73,7 +69,7 @@ export default function OrderList(){
             );
             setOrders(res.data);
         } catch (error) {
-            setMessage("Error deleting order: " + (error.response?.data?.message || error.message));
+            console.error("Error deleting order:", error);
         }
     };
 

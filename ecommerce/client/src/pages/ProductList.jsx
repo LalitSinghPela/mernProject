@@ -1,6 +1,5 @@
 import axios from "axios";
 import {useEffect,useState} from "react";
-import {useNavigate} from "react-router-dom";
 
 export default function ProductList(){
 
@@ -8,8 +7,8 @@ export default function ProductList(){
     const [products,setProducts]=useState([]);
     const [showProductForm, setShowProductForm] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState("");
     const [editingProduct, setEditingProduct] = useState(null);
+    const [message, setMessage] = useState("");
     
     const [formData, setFormData] = useState({
         name: "",
@@ -101,10 +100,9 @@ export default function ProductList(){
                     }
                 }
             );
-            setMessage("Product deleted successfully!");
             fetchProducts();
         } catch (error) {
-            setMessage("Error deleting product: " + (error.response?.data?.message || error.message));
+            console.error("Error deleting product:", error);
         }
     };
 
@@ -124,10 +122,9 @@ export default function ProductList(){
                     }
                 }
             );
-            setMessage(updatedData.featured ? "Product marked as featured!" : "Product removed from featured!");
             fetchProducts();
         } catch (error) {
-            setMessage("Error updating product: " + (error.response?.data?.message || error.message));
+            console.error("Error updating product:", error);
         }
     };
 
@@ -139,7 +136,7 @@ export default function ProductList(){
         try {
             // Validate that required fields are filled
             if (!formData.name || !formData.price || !formData.category || !formData.countInStock) {
-                setMessage("Please fill in all required fields");
+                alert("Please fill in all required fields");
                 setLoading(false);
                 return;
             }
@@ -164,7 +161,6 @@ export default function ProductList(){
                 );
 
                 if (response.status === 200 || response.status === 201) {
-                    setMessage("Product updated successfully!");
                     setFormData({
                         name: "",
                         price: "",
@@ -176,6 +172,7 @@ export default function ProductList(){
                     setEditingProduct(null);
                     setShowProductForm(false);
                     fetchProducts();
+                    setMessage("Product updated successfully!");
                 }
             } else {
                 // Add new product
@@ -190,7 +187,6 @@ export default function ProductList(){
                 );
 
                 if (response.status === 200 || response.status === 201) {
-                    setMessage("Product added successfully!");
                     setFormData({
                         name: "",
                         price: "",
@@ -201,9 +197,11 @@ export default function ProductList(){
                     });
                     setShowProductForm(false);
                     fetchProducts();
+                    setMessage("Product added successfully!");
                 }
             }
         } catch (error) {
+            console.error("Error:", error);
             setMessage("Error: " + (error.response?.data?.message || error.message));
         } finally {
             setLoading(false);
